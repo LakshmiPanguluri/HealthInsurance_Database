@@ -1,0 +1,15 @@
+1. Find the name of the Member who has a son as dependent.
+SELECT FirstName, LastName, Minit from MemberData m, Dependent d where m.MemberCK=d.MemberCK and d.Relation='Son';
+
+2. Find the Address, City, State, ZipCode of the insurance provider 'Blue Cross and Blue Shield of NewYork'.
+SELECT AddLine1, AddLine2, City, State, ZipCode from ProviderLocation p, InsuranceProvider i where p.ProviderID=i.ProviderID and i.ProviderName='Blue Cross and Blue Shield of NewYork';
+
+3. Find the total amount Claimed by the SubscriberID '1000000005'.
+SELECT Sum(ClaimedAmount) AS Total_amount
+FROM Claims
+WHERE (((Claims.[SubscriberID])='1000000005'));
+
+4. What are the Plan names provided by the ProviderID 'PRV00001'.
+SELECT PlanName from Plans p, InsuranceProvider i where p.ProviderID=i.ProviderID and i.ProviderID='PRV00001';
+
+5. Find the salary of the Member with the first name as 'DANIEL'.
